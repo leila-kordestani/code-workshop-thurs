@@ -20,9 +20,16 @@ def add_new_shopping_list(lists_by_name, new_list_name):
     Returns:
       None
     """
+    
+    list_name = lists_by_name.get(new_list_name) 
+    if list_name is None:
+        lists_by_name[new_list_name] = []
+    else:
+        print "This shop has already been added to the list"
 
-    # your code here! 
-    pass
+
+
+    
 
 
 def remove_shopping_list(lists_by_name, list_name_to_remove):
@@ -37,9 +44,13 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
     Returns:
       None
     """
+     list_name = lists_by_name.get(list_name_to_remove) 
+    if list_name is None:
+        print "This shop is not on the list"
+    else:
+        del list_name_to_remove  
 
-    # your code here! 
-    pass
+    
 
 
 def add_to_shopping_list(lists_by_name, list_name, items):
@@ -53,8 +64,7 @@ def add_to_shopping_list(lists_by_name, list_name, items):
       None
     """
 
-    # your code here! 
-    pass
+    
 
 
 def remove_from_shopping_list(lists_by_name, list_name, items):
