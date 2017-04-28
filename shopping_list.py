@@ -44,7 +44,7 @@ def remove_shopping_list(lists_by_name, list_name_to_remove):
     Returns:
       None
     """
-     list_name = lists_by_name.get(list_name_to_remove) 
+    list_name = lists_by_name.get(list_name_to_remove) 
     if list_name is None:
         print "This shop is not on the list"
     else:
@@ -97,9 +97,14 @@ def display_shopping_list(lists_by_name, list_name):
     Returns:
       None
     """
+    
+    temp_list = lists_by_name.get(list_name) 
+    if temp_list is None:
+        print "This shop is not on the list"
+    else:
+        print list_name
 
-    # your code here! 
-    pass
+    
 
 
 def show_all_lists(lists_by_name):
@@ -111,8 +116,6 @@ def show_all_lists(lists_by_name):
       None
     """
 
-    # your code here! 
-    pass
 
 
 def parse_string_of_items(items_string):
@@ -201,7 +204,7 @@ def execute_repl(shopping_lists_by_name):
     """
 
     while True:
-
+        print shopping_lists_by_name
         # get the next choice from the user
         choice = get_menu_choice()
 
